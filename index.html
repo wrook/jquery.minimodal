@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<link rel="stylesheet" href="skins/familiarLook/style.css" type="text/css" media="screen" charset="utf-8">
+		<link rel="stylesheet" href="jqModal.css" type="text/css" media="screen" charset="utf-8">
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">
+		<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jquery.metadata/jquery.metadata.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jquery.jqmodal.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jquery.minimodal.js" type="text/javascript" charset="utf-8"></script>
+		<script src="miniModal-demo.js" type="text/javascript" charset="utf-8"></script>
+
+
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushCss.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+		<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushXml.js"></script>
+		<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCore.css"/>
+		<link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shThemeDefault.css"/>
+		<script type="text/javascript">
+			SyntaxHighlighter.config.clipboardSwf = 'syntaxhighlighter/scripts/clipboard.swf';
+			SyntaxHighlighter.all();
+		</script>
+	</head>
+	<body>
+		<h1>jQuery.miniModal plugin</h1>
+		<h2>A simple but dynamic modal popups plugin. <em style="font-size: 0.7em; font-weight: normal;">("simple" being a relative term of course)</em></h2>
+		<p>
+			This plugin is a simple to use but very specific implementation classical type of modal popup windows.
+		</p>
+		<p>
+			It dynamically creates modal popups with a title, a body and and ok and/or cancel. miniModal also provides the necessary events to create those popups
+			in a repeatable manner. So, if you have 12 instances of a "about him" popup on a page. The dynamic hooking to all those buttons and how each modal can
+			open and close is already available as easy to change parameters.
+		</p>
+			
+		<h1>
+			Sample
+		</h1>
+		<p>
+			This sample provides "edit" button to a list of poem as a degradable javascript enhancement. The behavior is added dynamically and each modal windows hook themselves automatically.
+		</p>
+<div class="poem">
+<pre id="poem1">
+Twittered the raven, "Nevermore".
+And the raven, never clicking, still is loading, still is loading
+On the disabled button just below my open form;
+Twittered the raven, "Nevermore".
+</pre>
+</div>
+<div class="poem">
+<pre id="poem2">
+Roses are red, violets are blue
+My dog is dead, what can I do
+</pre>
+</div>
+<div class="poem">
+<pre id="poem3">
+Roses are red, violets are blue
+My dog is dead, what can I do
+</pre>
+</div>
+
+		<div class="editPoemModal miniModal" id="editPoemModalTemplate">
+			<div class="miniModal-header">
+				<h2>
+					<span class="miniModal-titlePlacehodler">Edit poem</span>
+				</h2>
+			</div>
+			<div class="miniModal-body">
+				<textarea class="editPoem" style="width: 600px; height: 100px;"></textarea>
+			</div>
+		</div>
+
+		<h1>Plugin options and setup</h1>
+		<p>
+			Note that this plugin requires jqModal and can be optionnaly be coupled to jquery.Metadata.
+		</p>
+		<p>
+			More configuration options are available, refer to the plugin's default settings for reference.
+		</p>
+		<h2>HTML header</h2>
+		<pre class="brush: html;">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;skins/familiarLook/style.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; charset=&quot;utf-8&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;jqModal.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot; charset=&quot;utf-8&quot;&gt;
+&lt;script src=&quot;jquery.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;jquery.metadata/jquery.metadata.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;jquery.jqmodal.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;jquery.minimodal.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;miniModal-demo.js&quot; type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+		</pre>
+
+		<h2>Modal window template provided for this sample</h2>
+		<pre class="brush: html;">
+&lt;div class=&quot;editPoemModal miniModal&quot; id=&quot;editPoemModalTemplate&quot;&gt;
+	&lt;h2&gt;Edit poem&lt;/h2&gt;
+	&lt;div class=&quot;miniModal-body&quot;&gt;
+		&lt;textarea class=&quot;editPoem&quot; style=&quot;width: 600px; height: 100px;&quot;&gt;&lt;/textarea&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+		</pre>
+
+		<h2>HTML Syntax of the sample</h2>
+		<pre class="brush: html;">
+
+&lt;div class=&quot;poem&quot;&gt;
+&lt;pre id=&quot;poem1&quot;&gt;
+Twittered the raven, &quot;Nevermore&quot;.
+And the raven, never clicking, still is loading, still is loading
+On the disabled button just below my open form;
+Twittered the raven, &quot;Nevermore&quot;.
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;poem&quot;&gt;
+&lt;pre id=&quot;poem2&quot;&gt;
+Roses are red, violets are blue
+My dog is dead, what can I do
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;poem&quot;&gt;
+&lt;pre id=&quot;poem3&quot;&gt;
+Roses are red, violets are blue
+My dog is dead, what can I do
+&lt;/pre&gt;
+&lt;/div&gt;
+			
+		</pre>
+		<h2>Javascript code to setup and initialize the sample</h2>
+		<pre class="brush: javascript;">
+$(document).ready(function(){
+	$(&quot;.poem&quot;).each(function(){
+		$this = $(this);
+		poemId = $(&quot;pre&quot;, $this)[0].id;
+		$this.append($(&#039;&lt;button id=&quot;btnEdit-&#039; + poemId + &#039;&quot; class=&quot;editPoemButton {poemId:&#039; + &quot;&#039;&quot; + poemId + &quot;&#039;&quot; + &#039;}&quot;&gt;Edit&lt;/button&gt;&#039;))
+	});
+
+	$(&quot;.editPoemButton&quot;).miniModal({
+		overlay: 10,
+		onBeforeShow: function(hash, $this) {
+			var poem = $(&quot;#&quot; + $this.metadata.poemId).html();
+			$(&quot;.editPoem&quot;, $this).val(poem);
+			return true;
+		},
+		onOk: function($this) {
+			$(&quot;#&quot; + $this.metadata.poemId).html( $(&quot;.editPoem&quot;, $this).val() )
+			return true;
+		},
+		templateWindow: function($this) {
+			// Returns a custom template taken from a hidden div in the dom
+			var newModal = $(&quot;#editPoemModalTemplate&quot;).clone();
+			newModal[0].id = &quot;&quot;;
+			return newModal;
+		}
+	});
+})
+		</pre>
+		<h2>Basic styles provided by the default skin</h2>
+<pre class="brush: css;">
+.miniModal {
+	position: absolute;
+	z-index: 10000;	
+	background: #fff;
+	border: 5px solid #cfcfcf;
+	-moz-border-radius: 10px 10px 10px 10px;
+}
+
+.miniModal-inner {
+}
+.miniModal-header {
+	background: #e6e6e6;
+	padding: 5px 10px;
+}
+.miniModal-header h2 {
+	margin: 0px;
+	padding: 0px;
+}
+.miniModal-body {
+	padding: 10px 10px 0px 10px;
+}
+
+.miniModal-buttonBar {
+	padding: 10px;
+}</pre>
+
+	</body>
+</html>

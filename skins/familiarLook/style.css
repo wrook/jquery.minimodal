@@ -1,0 +1,28 @@
+
+.miniModal {
+	position: absolute;
+	z-index: 10000;	
+	background: #fff;
+	border: 5px solid #cfcfcf;
+	-moz-border-radius: 10px 10px 10px 10px;
+}
+
+.miniModal-inner {
+}
+.miniModal-header {
+	background: #e6e6e6;
+	padding: 5px 10px;
+}
+.miniModal-header h2 {
+	font-size: 1.5em;
+	color: #000;
+	margin: 0px;
+	padding: 0px;
+}
+.miniModal-body {
+	padding: 10px 10px 0px 10px;
+}
+
+.miniModal-buttonBar {
+	padding: 10px;
+}
