@@ -1,9 +1,9 @@
 /*
-  @author: Mathieu Sylvain / http://hibe.com
+  @author: Mathieu Sylvain
   @url: http://hibe.com
   @usage: miniModal(); // applied tags to be used for all implementations
           $('.miniModal').miniModal(options);
-  @license: Copyrights Shopmedia 2009
+  @license: Released under the MIT License, Copyright (c) 2009 Mathieu Sylvain & Shopmedia inc.
   @version: 0.1
 
  See the default settings at the bottom for more reference on how to customize this plugin
